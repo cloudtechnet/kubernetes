@@ -50,13 +50,4 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --node-type t2.small \
     ```
 
-5. To delete the EKS clsuter 
-   ```sh 
-   eksctl delete cluster demo-cluster --region us-west-1
-   ```
-   
-6. Validate your cluster using by creating by checking nodes and by creating a pod 
-   ```sh 
-   kubectl get nodes
-   kubectl run pod tomcat --image=tomcat 
-   ```
+
