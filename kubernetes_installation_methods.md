@@ -12,7 +12,7 @@
 1. Kubespray
 
 
-### Kubernetes As a Service
+### Kubernetes in Public Cloud
 
 1. AKS - Azure Kubernetes Services
 1. EKS - Elastic Kubernetes Service 
