@@ -45,6 +45,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --zones <AZ-1>,<AZ-2>
    
   #### Example
+  ```sh
    eksctl create cluster --name demo-cluster \
       --region us-west-1 \
    --node-type t2.small \
