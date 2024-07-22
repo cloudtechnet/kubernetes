@@ -44,7 +44,7 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --nodes-max 2 \ 
    --zones <AZ-1>,<AZ-2>
    
-   example:
+   **example:**
    eksctl create cluster --name demo-cluster \
       --region us-west-1 \
    --node-type t2.small \
