@@ -199,3 +199,10 @@ Monitoring a Kubernetes cluster involves observing the health and performance of
   ```bash
   helm install grafana stable/grafana
   ```
+### 9.Types of Node Affinity
+
+**Node affinity has two types:**
+
+**RequiredDuringSchedulingIgnoredDuringExecution**: This type of node affinity is a hard requirement, meaning the Pod will only be scheduled on nodes that satisfy the specified conditions. If no such nodes are available, the Pod will not be scheduled.
+
+**PreferredDuringSchedulingIgnoredDuringExecution**: This type of node affinity is a soft requirement. Kubernetes will try to schedule the Pod on nodes that satisfy the specified conditions, but if no such nodes are available, the Pod can still be scheduled on other nodes.
