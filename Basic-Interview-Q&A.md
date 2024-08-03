@@ -206,3 +206,37 @@ Monitoring a Kubernetes cluster involves observing the health and performance of
 **RequiredDuringSchedulingIgnoredDuringExecution**: This type of node affinity is a hard requirement, meaning the Pod will only be scheduled on nodes that satisfy the specified conditions. If no such nodes are available, the Pod will not be scheduled.
 
 **PreferredDuringSchedulingIgnoredDuringExecution**: This type of node affinity is a soft requirement. Kubernetes will try to schedule the Pod on nodes that satisfy the specified conditions, but if no such nodes are available, the Pod can still be scheduled on other nodes.
+
+### Syntax and Usage
+
+Node affinity is specified in the "Affinity" field of a pods specification.
+
+### Example of YAML configuration:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-affinity-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: region
+              operator: In
+              values:
+              - us-west-1
+```
